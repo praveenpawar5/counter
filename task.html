@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- CSS code-->
+		<style>
+			body {
+				position: absolute;
+				left: 0%;
+				text-align: center;
+			}
+            input[type="button"] {
+                border:2px solid rgb(199, 14, 14);
+                padding: 10px;
+                border-radius: 4px;
+            }
+            .inc {
+                background-color: rgb(199, 14, 14) !important;
+                color:#ffffff;
+            }
+            input[type="text"] {
+                border:2px solid rgb(199, 14, 14);
+                padding:10px;
+                border-radius: 4px;
+            }
+			.container {
+				justify-content: center;
+				align-items: center;
+				display: flex;
+				height: 100%;
+				text-align: center;
+                
+			}
+
+			button {
+				width: 90px;
+				height: 60px;
+				font-size: 30px;
+				background-color: green;
+				color: honeydew;
+			}
+			button:hover {
+				background-color: greenyellow;
+				color: grey;
+			}
+
+			h2 {
+				color: black;
+				margin: 0 50px;
+				font-size: 45px;
+			}
+			h1 {
+				font-size: 35px;
+				color: green;
+				text-align: center;
+				padding-left: 10%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+            <input type="button" onclick="decrementValue()" value="-" />
+            <input type="text" name="quantity" value="1" maxlength="4" min="1" max="1000" size="1" id="number" />
+            <input type="button" class="inc" onclick="incrementValue()" value="+" />
+            </div>
+		<!-- javascript code -->
+		<script>	
+        function incrementValue()
+        {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            if(value<1000){
+                value++;
+                    document.getElementById('number').value = value;
+            }
+        }
+        function decrementValue()
+        {
+            var value = parseInt(document.getElementById('number').value, 10);
+            value = isNaN(value) ? 0 : value;
+            if(value>1){
+                value--;
+                    document.getElementById('number').value = value;
+            }
+
+        }
+        </script>
+	</body>
+</html>
